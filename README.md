@@ -117,6 +117,7 @@ By examining content performance, engagement metrics, audience growth, and shari
 
 It also provides practical experience in applying SQL concepts to real-world business questions.
 
+Video explanation : https://drive.google.com/file/d/1-XMo0jt3uAXpDIZCf-zRv-z3zzLDFlrv/view?usp=drive_link
 ---
 
 **Project:** Instagram Activity Analysis  
