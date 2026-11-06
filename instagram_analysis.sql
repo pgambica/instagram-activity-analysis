@@ -4,6 +4,7 @@ SELECT
     GROUP_CONCAT(DISTINCT post_type ORDER BY post_type SEPARATOR ', ') AS post_type_names
 FROM fact_content;
 
+
 -- Q2. What are the highest and lowest recorded impressions for each post type?
 SELECT
     post_type,
@@ -12,6 +13,7 @@ SELECT
 FROM fact_content
 GROUP BY post_type
 ORDER BY post_type;
+
 
 -- Q3. Filter weekend posts published in March and April
 SELECT
@@ -25,6 +27,7 @@ JOIN dim_dates AS dd
 WHERE dd.month_name IN ('March', 'April')
   AND dd.weekday_or_weekend = 'Weekend'
 ORDER BY fc.date;
+
 
 /* 4. Create a report to get the statistics for the account. The final output
 includes the following fields:
@@ -41,8 +44,6 @@ JOIN dim_dates AS dd
     ON fa.date = dd.date
 GROUP BY MONTH(dd.date), dd.month_name
 ORDER BY MONTH(dd.date);
-
-
 
 
 /* 5. Write a CTE that calculates the total number of 'likes’ for each
@@ -64,8 +65,6 @@ SELECT
     total_likes
 FROM july_likes
 ORDER BY total_likes DESC;
-
-
 
 
 /* 6. Create a report that displays the unique post_category names alongside
@@ -93,7 +92,6 @@ GROUP BY MONTH(dd.date), dd.month_name
 ORDER BY MONTH(dd.date);
 
 
-
 /* 7. What is the percentage breakdown of total reach by post type? The final
 output includes the following fields:
 • post_type
@@ -111,9 +109,6 @@ SELECT
 FROM fact_content
 GROUP BY post_type
 ORDER BY total_reach DESC;
-
-
-
 
 
 /* 8. Create a report that includes the quarter, total comments, and total
@@ -147,8 +142,6 @@ GROUP BY
         WHEN MONTH(fc.date) BETWEEN 7 AND 9 THEN 'Q3'
     END
 ORDER BY fc.post_category, quarter;
-
-
 
 
 
